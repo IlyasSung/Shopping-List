@@ -1,36 +1,22 @@
 import React from 'react';
-import { Button, Stack, Box } from '@mui/material';
-import { auth } from './lib/firebase';
-import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
-
+import { Stack } from '@mui/material';
+import Login from './components/Login';
+import Header from './components/Header';
+import ListControl from './components/ListControl';
+import Add from './components/Add';
 
 function App() {
-  const [signInWithGoogle, user] = useSignInWithGoogle(auth);
-  console.log(user ? user : null);
   return (
-    <Stack 
+    <Stack
       direction="column"
-      justifyContent="center"
+      justifyContent="space-around"
       alignItems="center"
-      spacing={1}
+      spacing={2}
     >
-      <Box>
-        <Button 
-          variant="outlined" 
-          onClick={() => {
-            signInWithGoogle();
-          }}
-        >
-          Login
-        </Button>
-        <p>
-          Welcome {user ? user.user.displayName : null}!
-        </p>
-      </Box>
-
-      <Box>
-        <Button variant="outlined" >Print List</Button>
-      </Box>
+      <Login />
+      <Header />
+      <ListControl />
+      <Add />
     </Stack>
   );
 }
