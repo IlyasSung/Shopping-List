@@ -14,6 +14,7 @@ function App() {
         justifyContent="space-around"
         alignItems="center"
         spacing={2}
+        sx={{marginTop: "50px"}}
       >
         <Instructions />
         <AddListControl />
