@@ -1,23 +1,25 @@
 import React from 'react';
 import { Stack } from '@mui/material';
-import Login from './components/Login';
-import Header from './components/Header';
-import ListControl from './components/ListControl';
-import Add from './components/Add';
+import Instructions from './components/Instructions';
+import AddListControl from './components/AddListControl';
+import NavBar from './components/NavBar';
+import ShoppingList from './components/ShoppingList';
 
 function App() {
   return (
-    <Stack
-      direction="column"
-      justifyContent="space-around"
-      alignItems="center"
-      spacing={2}
-    >
-      <Login />
-      <Header />
-      <ListControl />
-      <Add />
-    </Stack>
+    <>
+      <NavBar />
+      <Stack
+        direction="column"
+        justifyContent="space-around"
+        alignItems="center"
+        spacing={2}
+      >
+        <Instructions />
+        <AddListControl />
+        <ShoppingList />
+      </Stack>
+    </>
   );
 }
 
