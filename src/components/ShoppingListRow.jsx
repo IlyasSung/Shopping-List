@@ -5,7 +5,8 @@ import IconButton from '@mui/material/IconButton';
 import DeleteIcon from '@mui/icons-material/Delete';
 
 
-function ShoppingListRow() {
+function ShoppingListRow(props) {
+  const {id, name, quantity} = props;
   return (
     <ListItem
       secondaryAction={
@@ -15,8 +16,8 @@ function ShoppingListRow() {
       }
     >
       <ListItemText
-        primary="Single-line item"
-        secondary="Secondary text"
+        primary={name}
+        secondary={`quantity: ${quantity}`}
       />
     </ListItem>
   );

@@ -11,8 +11,10 @@ function AddListControl() {
   const [quantity, setQuantity] = useState('');
 
   const submitItems = () => {
-    const docRef = doc(firestore, "Users", user.uid, 'ShoppingList', uuidv4());
+    const id = uuidv4();
+    const docRef = doc(firestore, "Users", user?.uid, 'ShoppingList', id);
     const data = {
+      id: id,
       name: name,
       quantity: quantity
     }
