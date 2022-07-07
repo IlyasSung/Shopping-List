@@ -3,18 +3,21 @@ import { Button, Stack, TextField, Divider } from '@mui/material';
 import { doc, setDoc } from 'firebase/firestore';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { firestore, auth } from '../lib/firebase';
+import { v4 as uuidv4 } from 'uuid';
 
 function AddListControl() {
   const [user] = useAuthState(auth);
   const [name, setName] = useState('');
   const [quantity, setQuantity] = useState('');
 
-  const createGroceryList = () => {
-    const docRef = doc(firestore, "Users", user.uid);
+  const submitItems = () => {
+    const docRef = doc(firestore, "Users", user.uid, 'ShoppingList', uuidv4());
     const data = {
       name: name,
       quantity: quantity
     }
+    setName('');
+    setQuantity('');
     return setDoc(docRef, data);
   };
 
@@ -23,7 +26,7 @@ function AddListControl() {
       direction="row"
       justifyContent="center"
       alignItems="flex-end"
-      spacing={2}
+      spacing={4}
     >
       <TextField 
         label="Add" 
@@ -46,9 +49,7 @@ function AddListControl() {
       >
         <Button 
           variant="outlined" 
-          onClick={() => {
-            createGroceryList("ilyassung@gmail.com");
-          } }
+          onClick={() => submitItems()}
         >
           Add
         </Button>
