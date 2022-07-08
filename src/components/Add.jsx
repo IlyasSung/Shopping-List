@@ -12,16 +12,20 @@ function AddListControl() {
   const [quantity, setQuantity] = useState('');
 
   const submitItems = () => {
-    const id = uuidv4();
-    const docRef = doc(firestore, "Users", user?.uid, 'ShoppingList', id);
-    const data = {
-      id: id,
-      name: name,
-      quantity: quantity
+    if (name && quantity) { 
+      const id = uuidv4();
+      const docRef = doc(firestore, "Users", user?.uid, 'ShoppingList', id);
+      const data = {
+        id: id,
+        name: name,
+        quantity: quantity
+      }
+      setName('');
+      setQuantity('');
+      return setDoc(docRef, data);
+    } else {
+      alert('Error: Enter valid name and quantity');
     }
-    setName('');
-    setQuantity('');
-    return setDoc(docRef, data);
   };
 
   return (
