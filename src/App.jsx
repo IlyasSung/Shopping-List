@@ -1,7 +1,7 @@
 import React from 'react';
 import { Stack } from '@mui/material';
 import Instructions from './components/Instructions';
-import AddListControl from './components/AddListControl';
+import Add from './components/Add';
 import NavBar from './components/NavBar';
 import ShoppingList from './components/ShoppingList';
 
@@ -17,7 +17,7 @@ function App() {
         sx={{marginTop: "50px"}}
       >
         <Instructions />
-        <AddListControl />
+        <Add />
         <ShoppingList />
       </Stack>
     </>

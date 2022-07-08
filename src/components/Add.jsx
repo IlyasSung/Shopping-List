@@ -4,6 +4,7 @@ import { doc, setDoc } from 'firebase/firestore';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { firestore, auth } from '../lib/firebase';
 import { v4 as uuidv4 } from 'uuid';
+import ClearList from './ClearList';
 
 function AddListControl() {
   const [user] = useAuthState(auth);
@@ -56,7 +57,7 @@ function AddListControl() {
           Add
         </Button>
         <Divider orientation="vertical" flexItem />
-        <Button variant="outlined">Clear List</Button>
+        <ClearList />
       </Stack>
     </Stack>
   );
