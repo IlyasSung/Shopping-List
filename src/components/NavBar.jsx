@@ -3,6 +3,7 @@ import { Stack, Box, AppBar, Toolbar, Typography } from '@mui/material';
 import { auth } from '../lib/firebase';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import Login from './Login';
+import Logout from './Logout';
 
 function NavBar() {
   const [user] = useAuthState(auth);
@@ -19,7 +20,7 @@ function NavBar() {
             <Typography variant="subtitle1">
               {user ? `Welcome ${user.displayName}!` : 'Please Login'}
             </Typography>
-            <Login />
+            {user ? <Logout /> : <Login />}
           </Stack>
         </Toolbar>
       </AppBar>
