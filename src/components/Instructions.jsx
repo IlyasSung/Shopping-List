@@ -1,6 +1,7 @@
 import React from 'react';
 import { Stack, Typography } from '@mui/material';
 
+//Instructions to teach the user how to use the shopping list webapp.
 
 function Instructions() {
   return (

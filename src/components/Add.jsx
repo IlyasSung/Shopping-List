@@ -6,10 +6,14 @@ import { firestore, auth } from '../lib/firebase';
 import { v4 as uuidv4 } from 'uuid';
 import ClearList from './ClearList';
 
+//Implements the Add textfields, button and functionality.
+
 function AddListControl() {
   const [user] = useAuthState(auth);
   const [name, setName] = useState('');
   const [quantity, setQuantity] = useState('');
+
+  //Checks to see if the textfields hold data. If so, returns the data and creates document in the database adding an item to the shopping list.
 
   const submitItems = () => {
     if (name && quantity) { 

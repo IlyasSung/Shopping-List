@@ -5,6 +5,8 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import Login from './Login';
 import Logout from './Logout';
 
+//Implements the navigation bar at the top of the page. 
+
 function NavBar() {
   const [user] = useAuthState(auth);
   return (
@@ -20,7 +22,7 @@ function NavBar() {
             <Typography variant="subtitle1">
               {user ? `Welcome ${user.displayName}!` : 'Please Login'}
             </Typography>
-            {user ? <Logout /> : <Login />}
+            {user ? <Logout /> : <Login />} 
           </Stack>
         </Toolbar>
       </AppBar>

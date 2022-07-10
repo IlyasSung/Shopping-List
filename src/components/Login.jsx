@@ -3,6 +3,7 @@ import { Button, Box } from '@mui/material';
 import { auth } from '../lib/firebase';
 import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
 
+//Implements the Login button and functionality.
 
 function Login() {
   const [signInWithGoogle] = useSignInWithGoogle(auth);

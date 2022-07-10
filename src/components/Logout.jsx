@@ -3,6 +3,7 @@ import { Button, Box } from '@mui/material';
 import { auth } from '../lib/firebase';
 import { signOut } from 'firebase/auth';
 
+//Implements the Logout button and functionality.
 
 function Logout() {
   return (

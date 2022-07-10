@@ -8,6 +8,8 @@ import { firestore } from '../lib/firebase';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { auth } from '../lib/firebase';
 
+//Implements how each item's name and quantity is displayed and allows the user to remove items with the delete icon.
+
 function ShoppingListRow(props) {
   const [user] = useAuthState(auth);
   const {id, name, quantity} = props;

@@ -8,8 +8,10 @@ import NavBar from './components/NavBar';
 import ShoppingList from './components/ShoppingList';
 
 
+//The main function calling all the components to construct the webapp.
+
 function App() {
-  const [user] = useAuthState(auth);
+  const [user] = useAuthState(auth); //Allows me to interact with user
   return (
     <>
       <NavBar />
@@ -21,7 +23,7 @@ function App() {
         sx={{marginTop: "50px"}}
       >
         <Instructions />
-        {user ? <Add /> : null}
+        {user ? <Add /> : null} 
         {user ? <ShoppingList /> : null}
       </Stack>
     </>
